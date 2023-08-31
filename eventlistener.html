@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        /* background-color: purple; */
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        padding-top: 20rem;
+      }
+      button {
+        font-size: 2rem;
+        border-radius: 1000px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <button onclick="message()">Click me</button> -->
+    <!-- <button onclick="color()">START</button>
+    <button onclick="stop()">STOP</button>
+    <button onclick="pause()">PAUSE</button> -->
+    <!-- <button onclick="image()">></button> -->
+
+    <script>
+      //   function message() {
+      //     console.log("Prithvi");
+      //   }
+      //   const charanIntv = window.setInterval(() => {
+      //     console.log("Hi, Prithvi");
+      //   }, 2000);
+
+      //   window.setTimeout(() => {
+      //     window.clearInterval(charanIntv);
+      //   }, 6000);
+      //   let a;
+      //   let index = 0;
+      //   function color() {
+      //     const colors = ["orange", "crimson", "plum", "teal"];
+
+      //     // let index = 0;
+      //     a = setInterval(() => {
+      //       if (index >= colors.length) {
+      //         index = 0;
+      //       }
+      //       document.body.style.background = colors[index];
+      //       index++;
+      //     }, 2000);
+      //   }
+      //   function stop() {
+      //     index = 0;
+      //     clearInterval(a);
+      //   }
+
+      //   function pause() {
+      //     clearInterval(a);
+      //   }
+      let a;
+      let index = 0;
+      function image() {
+        const img = [
+          "https://plus.unsplash.com/premium_photo-1668017178979-9e341bfaa464?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80",
+          "https://images.unsplash.com/photo-1565915775844-9b853c814c4c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        ];
+
+        a = setInterval(() => {
+          if (index >= img.length) {
+            index = 0;
+          }
+          document.body.style.backgroundImage = img[index];
+          index++;
+        }, 1000);
+      }
+    </script>
+  </body>
+</html>

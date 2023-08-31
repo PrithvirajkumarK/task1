@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      body {
+        background-color: hsla(0, 14%, 88%, 0.859);
+        padding-top: 15%;
+      }
+      /* li::before {
+        content: "✔️ ";
+      } */
+      .dot {
+        list-style-type: none;
+      }
+      main {
+        display: flex;
+        justify-content: space-evenly;
+        font-family: sans-serif;
+      }
+      h2 {
+        color: rgb(24 16 89);
+        line-height: 0.5%;
+        padding: 5%;
+        text-align: center;
+      }
+      .intro {
+        background-color: white;
+        padding: 1%;
+        border-radius: 5%;
+        line-height: 40px;
+      }
+      .base {
+        background-color: white;
+        padding: 1%;
+        border-radius: 5%;
+        line-height: 40px;
+      }
+      .pro {
+        background-color: rgb(24 16 89);
+        padding: 1%;
+        border-radius: 5%;
+        line-height: 40px;
+        color: white;
+      }
+      .enterprise {
+        background-color: white;
+        padding: 1%;
+        border-radius: 5%;
+        line-height: 40px;
+      }
+      .pro2 {
+        color: white;
+      }
+      .month {
+        color: black;
+        font-family: sans-serif;
+      }
+      span {
+        color: black;
+        font-size: 18px;
+      }
+      .mon,
+      .dol {
+        color: white;
+      }
+      input {
+        padding: 1%;
+        width: 300px;
+        height: 50px;
+        border-radius: 10px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <div class="intro">
+        <h2>Intro</h2>
+        <ul class="dot">
+          <li>
+            <i class="fa-solid fa-check"></i> Upload Video up to 720p Resolution
+          </li>
+          <li>
+            <i class="fa-solid fa-check"></i> Attachment & Post Scheduling
+          </li>
+          <li><i class="fa-solid fa-check"></i> Set your rates</li>
+          <li><i class="fa-solid fa-check"></i> Exclusive Deals</li>
+          <li><i class="fa-solid fa-check"></i> Advanced statistics</li>
+        </ul>
+        <h2>
+          <span color="doller">$</span>123 <span class="month">/month</span>
+        </h2>
+        <input style="color: blueviolet" type="button" value="Choose" />
+      </div>
+      <div class="base">
+        <h2>Base</h2>
+        <ul class="dot">
+          <li>
+            <i class="fa-solid fa-check"></i> Upload Video up to 720p Resolution
+          </li>
+          <li>
+            <i class="fa-solid fa-check"></i> Attachment & Post Scheduling
+          </li>
+          <li><i class="fa-solid fa-check"></i> Set your rates</li>
+          <li><i class="fa-solid fa-check"></i> Exclusive Deals</li>
+          <li><i class="fa-solid fa-check"></i> Advanced statistics</li>
+        </ul>
+        <h2>
+          <span class="doller">$</span>234 <span class="month">/month</span>
+        </h2>
+        <input style="color: blueviolet" type="button" value="Choose" />
+      </div>
+      <div class="pro">
+        <h2 class="pro2">Pro</h2>
+        <ul class="dot">
+          <li>
+            <i class="fa-solid fa-check"></i> Upload Video up to 720p Resolution
+          </li>
+          <li>
+            <i class="fa-solid fa-check"></i> Attachment & Post Scheduling
+          </li>
+          <li><i class="fa-solid fa-check"></i> Set your rates</li>
+          <li><i class="fa-solid fa-check"></i> Exclusive Deals</li>
+          <li><i class="fa-solid fa-check"></i> Advanced statistics</li>
+        </ul>
+        <h2 class="pro2">
+          <span class="dol">$</span>456 <span class="mon">/month</span>
+        </h2>
+        <input
+          style="color: white; background-color: blueviolet"
+          type="button"
+          value="Try 1 month"
+        />
+      </div>
+      <div class="enterprise">
+        <h2>Enterprise</h2>
+        <ul class="dot">
+          <li>
+            <i class="fa-solid fa-check"></i> Upload Video up to 720p Resolution
+          </li>
+          <li>
+            <i class="fa-solid fa-check"></i> Attachment & Post Scheduling
+          </li>
+          <li><i class="fa-solid fa-check"></i> Set your rates</li>
+          <li><i class="fa-solid fa-check"></i> Exclusive Deals</li>
+          <li><i class="fa-solid fa-check"></i> Advanced statistics</li>
+        </ul>
+        <h2>
+          <span class="doller">$</span>678 <span class="month">/month</span>
+        </h2>
+        <input style="color: blueviolet" type="button" value="Choose" />
+      </div>
+    </main>
+  </body>
+</html>

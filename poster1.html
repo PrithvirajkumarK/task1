@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      .head {
+        display: flex;
+        background: purple;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .nav > ul {
+        display: flex;
+        list-style: none;
+        gap: 10px;
+        color: white;
+      }
+      .head > img {
+        height: 50%;
+      }
+      .topimage > h1 {
+        text-align: center;
+        margin: 0;
+        transform: translateY(20rem);
+        font-size: 50px;
+      }
+      .topimage {
+        background-image: url("image-header.jpg");
+        height: 50rem;
+        background-position: bottom;
+        background-size: cover;
+      }
+      section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 0;
+      }
+      .graphics {
+        background-image: url("image-graphic-design.jpg");
+        height: 30rem;
+        /* text-align: center; */
+        background-position: center;
+        background-size: cover;
+      }
+      .photo {
+        background-image: url("image-photography.jpg");
+        height: 30rem;
+        background-position: center;
+        background-size: cover;
+      }
+      .egg {
+        background-image: url("image-transform.jpg");
+        height: 30rem;
+        background-position: center;
+        background-size: cover;
+      }
+      .standout {
+        background-image: url("image-stand-out.jpg");
+        height: 30rem;
+        background-position: center;
+        background-size: cover;
+      }
+      .standcon {
+        padding: 20%;
+      }
+      .eggcon {
+        padding: 20%;
+      }
+      .graphiccon {
+        /* transform: translateY(20rem); */
+        text-align: center;
+        padding-top: 300px;
+        padding-left: 20%;
+        padding-right: 20%;
+      }
+      .photocon {
+        /* transform: translateY(20rem); */
+        text-align: center;
+        padding-top: 300px;
+        padding-left: 20%;
+        padding-right: 20%;
+      }
+      .clients {
+        display: flex;
+        gap: 30px;
+        padding: 10%;
+      }
+      .client1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .client-head {
+        text-align: center;
+        transform: translateY(100px);
+      }
+      .client1 > img {
+        border-radius: 50%;
+        height: 70px;
+        aspect-ratio: 1/1;
+        padding: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="head">
+        <img src="logo.svg" alt="" />
+        <div class="nav">
+          <ul>
+            <li>About</li>
+            <li>Services</li>
+            <li>Projects</li>
+            <li>CONTACT</li>
+          </ul>
+        </div>
+      </div>
+      <div class="topimage">
+        <h1>We are creatives</h1>
+      </div>
+
+      <section class="">
+        <div class="eggcon">
+          <h1>Transform your brand</h1>
+          <p>
+            We are a full-service creative agency specializing in helping brands
+            grow fast. Engage your clients through compelling visuals that do
+            most of the marketing for you.
+          </p>
+          <a href="">Learn more </a>
+        </div>
+        <div class="egg"></div>
+
+        <div class="standout"></div>
+        <div class="standcon">
+          <h1>Stand out to the right audience</h1>
+          <p>
+            Using a collaborative formula of designers, researchers,
+            photographers, videographers, and copywriters, we’ll build and
+            extend your brand in digital places.
+          </p>
+          <a href="">Learn more </a>
+        </div>
+
+        <div class="graphics">
+          <div class="graphiccon">
+            <h1>Graphic design</h1>
+            <p>
+              Great design makes you memorable. We deliver artwork that
+              underscores your brand message and captures potential clients’
+              attention.
+            </p>
+            <a href="">Learn more </a>
+          </div>
+        </div>
+
+        <div class="photo">
+          <div class="photocon">
+            <h1>Photography</h1>
+            <p>
+              Increase your credibility by getting the most stunning,
+              high-quality photos that improve your business image.
+            </p>
+            <a href="">Learn more </a>
+          </div>
+        </div>
+      </section>
+      <div class="client-head">
+        <h1>Client testimonials</h1>
+      </div>
+      <section class="clients">
+        <div class="client1">
+          <img src="image-emily.jpg" alt="" />
+          <p>
+            We put our trust in Sunnyside and they delivered, making sure our
+            needs were met and deadlines were always hit.
+          </p>
+          <div class="profileemily">
+            <h2>Emily R.</h2>
+            <p>Marketing Director</p>
+          </div>
+        </div>
+
+        <div class="client1">
+          <img src="image-thomas.jpg" alt="" />
+          <p>
+            Sunnyside’s enthusiasm coupled with their keen interest in our
+            brand’s success made it a satisfying and enjoyable experience.
+          </p>
+          <div class="profilethomas">
+            <h2>Thomas S.</h2>
+            <p>Chief Operating Officer</p>
+          </div>
+        </div>
+
+        <div class="client1">
+          <img src="image-jennie.jpg" alt="" />
+          <p>
+            Incredible end result! Our sales increased over 400% when we worked
+            with Sunnyside. Highly recommended!
+          </p>
+          <div class="profilejenne">
+            <h2>Jennie F.</h2>
+            <p>Business Owner</p>
+          </div>
+        </div>
+      </section>
+    </header>
+  </body>
+</html>
+About Services Projects Contact Challenge by Frontend Mentor. Coded by Your Name
+Here.

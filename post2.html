@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+        }
+      .navigation {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        justify-content: space-between;
+        
+      }
+      .headertop{
+        font-family: sans-serif;
+        color: white;
+      }
+      .navigation .nav {
+        display: flex;
+        gap: 10px;
+        padding-right: 10px;
+      }
+      .navigation .title{
+        display: flex;
+        padding-left: 10px;
+      }
+      .image{
+        background-image: url("image-header.jpg");
+        height: 600px;
+        background-position: 20px;
+        background-size: cover;
+        padding-right: 30px;
+      }
+      .pillformat{
+        background-color: white;
+        border-radius: 1000px;
+        color: black;
+        height: 20px;
+        border: 2px solid black;
+        
+      }
+      h1{
+        text-align: center;
+        font-size: 40px;
+        padding-top: 100px;
+        color: white;
+        justify-content: center;
+      }
+      .gridfunction{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        font-family: sans-serif;
+      }
+      .gridposter{
+        align-items: center;
+        padding: 100px;
+      }
+      .gridposter > h3{
+            font-size: 40px;
+      }
+      .gridposter1{
+        align-items: center;
+        padding: 100px;
+      }
+      .gridposter1 > h3{
+            font-size: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="image">
+      
+    <div class="main">
+      <section class="headertop">
+        <div class="navigation">
+          <div class="title">
+            <h2>sunnyside</h2>
+          </div>
+          <div class="nav">
+            <p>About</p>
+            <p>Services</p>
+            <p>Projects</p>
+            <p class="pillformat">CONTACT</p>
+          </div>
+        </div>
+    </div>
+    <h1>WE ARE CREATIVES</h1>
+      </section>
+    </div>
+    <section class="gridfunction">
+    <div class="gridposter">
+        <h3>Transform your brand</h3>
+        <p>we are a full service creative agency specializing helping brands grow fast. Engage your clients through copelling visuals they do most of the marketing for you</p>
+        <h4>LEARN MORE</h4>
+    </div>
+    <div class="gridimage">
+        <img src="image-transform.jpg" alt="">
+    </div>
+    <div class="gridposter1">
+        <div class="gridimage1">
+            <img src="image-transform.jpg" alt="">
+        </div>
+        <h3>Transform your brand</h3>
+        <p>we are a full service creative agency specializing helping brands grow fast. Engage your clients through copelling visuals they do most of the marketing for you</p>
+        <h4>LEARN MORE</h4>
+    </div>
+   
+    </section>
+  </body>
+</html>

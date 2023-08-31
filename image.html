@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: grid;
+        place-content: center;
+        min-height: 100vh;
+      }
+      .image {
+        position: relative;
+      }
+      img {
+        border-radius: 50%;
+        width: 300px;
+        height: 300px;
+        box-shadow: rgba(0, 0, 0, 0.9) 0px 5px 15px;
+      }
+
+      h2 {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        background-color: purple;
+        padding-top: 20px;
+        padding: 10px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .num {
+        position: absolute;
+        top: 0;
+        right: 10px;
+        transition: all 1s;
+      }
+      .image:hover .num {
+        transform: scale(1.2);
+      }
+      .image:hover h2 {
+        background-color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="image">
+      <img
+        src="https://media.istockphoto.com/id/655667160/photo/creative-layout-made-of-flowers-and-leaves-with-paper-card-note-flat-lay-nature-concept.jpg?s=612x612&w=0&k=20&c=ewvAItDgzMBgftif-NJUbTSnOMPtBdi-o6y1JNSaRzM="
+        alt=""
+      />
+
+      <div class="num">
+        <h2>8</h2>
+      </div>
+    </div>
+  </body>
+</html>
