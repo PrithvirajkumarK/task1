@@ -7,25 +7,36 @@
     <style>
       body {
         margin: 0;
-        background-color: whitesmoke;
+        min-height: 100vh;
+        display: grid;
+        place-content: center;
+        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+
+        padding: 2rem;
+        font-family: Roboto, "san-serif";
+        background: whitesmoke;
       }
-      .content {
-        display: flex;
-        gap: 30px;
-        justify-content: center;
-        padding: 16%;
+
+      .flag-container {
+        background: white;
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
       }
-      .maincontent > img {
-        width: 100px;
-        height: 100px;
+
+      .flag-details {
+        padding: 1.5rem;
       }
-      .maincontent {
-        background-color: white;
-        width: 200px;
-        font-size: 14px;
-        font-family: sans-serif;
+
+      .flag-details p {
+        font-size: 1.1rem;
       }
-      .detais {
+
+      .flag-container img {
+        height: 12rem;
+        width: 100%;
+        object-fit: cover;
       }
     </style>
   </head>
@@ -69,39 +80,20 @@
         },
       ];
 
-      let containerhead = document.createElement("div");
-      document.body.append(containerhead);
-      containerhead.className = "content";
+      countriesInfo.forEach((content) => {
+        document.body.innerHTML += `<section class="flag-container">
+          <img
+          src=${content.flag}
+          alt=${content.name}/>
+          <div class="flag-details">
+            <h2 class="country-name">${content.name}</h2>
 
-      countriesInfo.map((a) => {
-        let data = document.createElement("div");
-        containerhead.append(data);
-        data.className = "maincontent";
-
-        let element = document.createElement("img");
-        data.append(element);
-
-        let container = document.createElement("div");
-        element.append(container);
-        container.className = "details";
-
-        let head = document.createElement("h2");
-        data.append(head);
-
-        let para1 = document.createElement("p");
-        data.append(para1);
-
-        let para2 = document.createElement("p");
-        data.append(para2);
-        let para3 = document.createElement("p");
-        data.append(para3);
-
-        element.setAttribute("src", a.flag);
-
-        head.innerText = a.name;
-        para1.innerHTML = `<strong>population:</strong> ${a.population}`;
-        para2.innerHTML = `<strong>Region:</strong> ${a.region}`;
-        para3.innerHTML = `<strong>Capital:</strong> ${a.capital}`;
+            <p><strong>Population:</strong> ${content.population}</p>
+           <p><strong>Region:</strong> ${content.region}</p>
+          <p><strong>Capital:</strong> ${content.capital}</p>
+         </div>
+         
+         </section>`;
       });
     </script>
   </body>
