@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: purple;
+      }
+      h1 {
+        display: flex;
+        justify-content: center;
+        padding: 20%;
+        font-size: 4rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="countdown"></h1>
+    <script>
+      const content = document.querySelector(".countdown");
+      let count = 10;
+      setTimeout(() => {
+        content.innerText = count;
+        setTimeout(() => {
+          content.innerText = --count;
+          setTimeout(() => {
+            content.innerText = --count;
+            setTimeout(() => {
+              content.innerText = --count;
+              setTimeout(() => {
+                content.innerText = --count;
+                setTimeout(() => {
+                  content.innerText = --count;
+                  setTimeout(() => {
+                    content.innerText = --count;
+                    setTimeout(() => {
+                      content.innerText = --count;
+                      setTimeout(() => {
+                        content.innerText = --count;
+                        setTimeout(() => {
+                          content.innerText = --count;
+                          setTimeout(() => {
+                            content.innerText = "HAPPY NEW YEAR🎉🎉";
+                          }, 2000);
+                        }, 2000);
+                      }, 2000);
+                    }, 2000);
+                  }, 2000);
+                }, 2000);
+              }, 2000);
+            }, 2000);
+          }, 2000);
+        }, 2000);
+      }, 2000);
+    </script>
+  </body>
+</html>

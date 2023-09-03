@@ -7,23 +7,34 @@
     <style>
       body {
         /* background-color: purple; */
+        background-image: url("https://images.unsplash.com/photo-1682685796014-2f342188a635?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
         display: flex;
-        gap: 10px;
-        justify-content: center;
-        padding-top: 20rem;
+        justify-content: space-between;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        min-height: 100vh;
       }
       button {
         font-size: 2rem;
-        border-radius: 1000px;
+        width: 3rem;
+        min-height: 100vh;
+      }
+      .but {
       }
     </style>
   </head>
   <body>
-    <!-- <button onclick="message()">Click me</button> -->
-    <!-- <button onclick="color()">START</button>
+    <div class="but">
+      <!-- <button onclick="message()">Click me</button> -->
+      <!-- <button onclick="color()">START</button>
     <button onclick="stop()">STOP</button>
     <button onclick="pause()">PAUSE</button> -->
-    <!-- <button onclick="image()">></button> -->
+      <button onclick="stop()"><</button>
+    </div>
+    <div class="but1">
+      <button onclick="">></button>
+    </div>
 
     <script>
       //   function message() {
@@ -64,15 +75,23 @@
         const img = [
           "https://plus.unsplash.com/premium_photo-1668017178979-9e341bfaa464?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80",
           "https://images.unsplash.com/photo-1565915775844-9b853c814c4c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+          "https://plus.unsplash.com/premium_photo-1690522530834-0ddb71e5e41e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
         ];
 
         a = setInterval(() => {
           if (index >= img.length) {
             index = 0;
           }
-          document.body.style.backgroundImage = img[index];
+          document.body.style.backgroundImage = "url(" + img[index] + ")";
           index++;
         }, 1000);
+      }
+      image();
+
+      function stop() {
+        clearInterval(a);
+        index = -1;
+        image();
       }
     </script>
   </body>

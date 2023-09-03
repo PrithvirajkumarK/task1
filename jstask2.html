@@ -5,7 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      div {
+      body {
+        margin: 0;
+        background-color: whitesmoke;
+      }
+      .content {
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+        padding: 16%;
+      }
+      .maincontent > img {
+        width: 100px;
+        height: 100px;
+      }
+      .maincontent {
+        background-color: white;
+        width: 200px;
+        font-size: 14px;
+        font-family: sans-serif;
+      }
+      .detais {
       }
     </style>
   </head>
@@ -48,28 +68,40 @@
           capital: "Reykjavik",
         },
       ];
+
       let containerhead = document.createElement("div");
       document.body.append(containerhead);
+      containerhead.className = "content";
 
       countriesInfo.map((a) => {
-        // let container = document.createElement("div");
-        // containerhead.append(container);
-
         let data = document.createElement("div");
         containerhead.append(data);
+        data.className = "maincontent";
 
         let element = document.createElement("img");
         data.append(element);
 
+        let container = document.createElement("div");
+        element.append(container);
+        container.className = "details";
+
         let head = document.createElement("h2");
         data.append(head);
+
+        let para1 = document.createElement("p");
+        data.append(para1);
+
+        let para2 = document.createElement("p");
+        data.append(para2);
+        let para3 = document.createElement("p");
+        data.append(para3);
 
         element.setAttribute("src", a.flag);
 
         head.innerText = a.name;
-        para1.innerHTML = `<p><strong>population:</strong> ${a.population}`;
-        para2.innerHTML = `<p><strong>Region:</strong> ${a.region}`;
-        para3.innerHTML = `<p><strong>Capital:</strong> ${a.capital}`;
+        para1.innerHTML = `<strong>population:</strong> ${a.population}`;
+        para2.innerHTML = `<strong>Region:</strong> ${a.region}`;
+        para3.innerHTML = `<strong>Capital:</strong> ${a.capital}`;
       });
     </script>
   </body>
