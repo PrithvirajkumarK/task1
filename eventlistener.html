@@ -17,10 +17,18 @@
       }
       button {
         font-size: 2rem;
-        width: 3rem;
-        min-height: 100vh;
+        /* width: 3rem;
+        min-height: 100vh; */
+        background-color: hsl(56, 100%, 50%);
+        border-radius: 10px;
       }
       .but {
+        height: 20px;
+        padding-top: 22%;
+      }
+      .but1 {
+        height: 20px;
+        padding-top: 22%;
       }
     </style>
   </head>
@@ -30,10 +38,10 @@
       <!-- <button onclick="color()">START</button>
     <button onclick="stop()">STOP</button>
     <button onclick="pause()">PAUSE</button> -->
-      <button onclick="stop()"><</button>
+      <button onclick="left()"><</button>
     </div>
     <div class="but1">
-      <button onclick="">></button>
+      <button onclick="right()">></button>
     </div>
 
     <script>
@@ -69,30 +77,44 @@
       //   function pause() {
       //     clearInterval(a);
       //   }
-      let a;
+
+      const img = [
+        "https://plus.unsplash.com/premium_photo-1668017178979-9e341bfaa464?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80",
+        "https://images.unsplash.com/photo-1565915775844-9b853c814c4c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        "https://plus.unsplash.com/premium_photo-1690522530834-0ddb71e5e41e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      ];
+
       let index = 0;
-      function image() {
-        const img = [
-          "https://plus.unsplash.com/premium_photo-1668017178979-9e341bfaa464?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80",
-          "https://images.unsplash.com/photo-1565915775844-9b853c814c4c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-          "https://plus.unsplash.com/premium_photo-1690522530834-0ddb71e5e41e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-        ];
+      let intervalId;
 
-        a = setInterval(() => {
-          if (index >= img.length) {
-            index = 0;
-          }
-          document.body.style.backgroundImage = "url(" + img[index] + ")";
-          index++;
-        }, 1000);
+      function showImage() {
+        const imgUrl = img[index];
+        document.body.style.backgroundImage = `url(${imgUrl})`;
       }
-      image();
 
-      function stop() {
-        clearInterval(a);
-        index = -1;
-        image();
+      function left() {
+        index = (index - 1 + img.length) % img.length;
+        showImage();
       }
+
+      function right() {
+        index = (index + 1) % img.length;
+        showImage();
+      }
+
+      function startSlideshow() {
+        intervalId = setInterval(right, 2000);
+      }
+
+      function stopSlideshow() {
+        clearInterval(intervalId);
+      }
+
+      // document.body.addEventListener("mouseover", stopSlideshow);
+      // document.body.addEventListener("mouseout", startSlideshow);
+
+      showImage();
+      startSlideshow();
     </script>
   </body>
 </html>

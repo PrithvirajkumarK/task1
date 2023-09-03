@@ -80,19 +80,35 @@
         },
       ];
 
-      countriesInfo.forEach((content) => {
+      // countriesInfo.forEach((content) => {
+      //   document.body.innerHTML += `<section class="flag-container">
+      //     <img
+      //     src=${content.flag}
+      //     alt=${content.name}/>
+      //     <div class="flag-details">
+      //       <h2 class="country-name">${content.name}</h2>
+
+      //       <p><strong>Population:</strong> ${content.population}</p>
+      //      <p><strong>Region:</strong> ${content.region}</p>
+      //     <p><strong>Capital:</strong> ${content.capital}</p>
+      //    </div>
+
+      //    </section>`;
+      // }
+
+      countriesInfo.forEach(({ flag, name, population, region, capital }) => {
         document.body.innerHTML += `<section class="flag-container">
           <img
-          src=${content.flag}
-          alt=${content.name}/>
+          src=${flag}
+          alt=${name}/>
           <div class="flag-details">
-            <h2 class="country-name">${content.name}</h2>
+            <h2 class="country-name">${name}</h2>
 
-            <p><strong>Population:</strong> ${content.population}</p>
-           <p><strong>Region:</strong> ${content.region}</p>
-          <p><strong>Capital:</strong> ${content.capital}</p>
+            <p><strong>Population:</strong> ${population}</p>
+           <p><strong>Region:</strong> ${region}</p>
+          <p><strong>Capital:</strong> ${capital}</p>
          </div>
-         
+
          </section>`;
       });
     </script>

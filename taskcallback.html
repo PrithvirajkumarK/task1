@@ -6,13 +6,16 @@
     <title>Document</title>
     <style>
       body {
-        background-color: purple;
+        background-color: hsl(305, 100%, 25%);
       }
       h1 {
         display: flex;
         justify-content: center;
         padding: 20%;
-        font-size: 4rem;
+        font-size: 5rem;
+      }
+      .countdown {
+        color: white;
       }
     </style>
   </head>
@@ -42,7 +45,7 @@
                         setTimeout(() => {
                           content.innerText = --count;
                           setTimeout(() => {
-                            content.innerText = "HAPPY NEW YEAR🎉🎉";
+                            content.innerText = " HAPPY NEW YEAR 🎉 🎉 ";
                           }, 2000);
                         }, 2000);
                       }, 2000);
