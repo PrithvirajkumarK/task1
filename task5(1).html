@@ -6,16 +6,26 @@
     <title>Document</title>
     <style>
       body {
-        background-color: rgb(237 242 248);
+        background-color: rgb(220, 219, 219);
+        display: flex;
+        transform: translateY(12rem);
+        justify-content: center;
       }
       main {
         display: flex;
         justify-content: center;
-        padding: 20px;
+        /* padding: 20px; */
+        width: 70%;
+        background-color: white;
       }
       .content {
-        width: 500px;
-        padding: 5%;
+        /* width: 500px; */
+        /* padding: 5%; */
+        display: flex;
+        flex-direction: column;
+        padding-left: 20px;
+        padding-right: 20px;
+        justify-content: center;
       }
       section {
         display: flex;
@@ -29,19 +39,24 @@
       h4 {
         color: rgb(148 151 155);
       }
-      img {
+      .left-image > img {
         width: 400px;
         height: 400px;
       }
-      .image {
-        width: 400px;
+      .profile > img {
+        height: 50px;
+        width: 50px;
+        border-radius: 50px;
+      }
+      .client-name {
+        transform: translateX(-160px);
       }
     </style>
   </head>
 
   <body>
     <main>
-      <div class="img">
+      <div class="left-image">
         <img
           src="https://rescuerecyclereuse.net/cdn/shop/products/Palmettodrawers1_1445x.jpg?v=1654596015"
         />
@@ -57,12 +72,12 @@
           you make any room feel complete.
         </p>
         <section>
-          <!-- <div id="image">
+          <div class="profile">
             <img
               src="https://th.bing.com/th/id/OIP.c4z729BDHiARpibVFAGwDAHaHa?pid=ImgDet&w=1200&h=1200&rs=1"
             />
-          </div> -->
-          <div>
+          </div>
+          <div class="client-name">
             <h3>Michelle Appleton</h3>
             <h4>28 June 2020</h4>
           </div>

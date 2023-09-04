@@ -6,20 +6,23 @@
     <title>Document</title>
     <style>
       body {
-        min-height: 100vh;
+        /* min-height: 100vh;
         margin: 0%;
-        padding: 20px;
+        padding: 20px; */
       }
       section {
-        display: flex;
+        display: grid;
+        grid-template-columns: 1fr;
         justify-content: center;
         font-family: sans-serif;
         gap: 20px;
-        padding-top: 15rem;
+        /* padding-top: 15rem;
+        width: 400px; */
       }
 
       .pic {
-        display: flex;
+        display: grid;
+        grid-template-columns: 1fr;
         padding: 20px;
         background-color: hsl(39.13deg 45.1% 90%);
         border: 2px solid hsl(210.31deg 50.26% 62.16%);
@@ -33,10 +36,47 @@
         color: hsl(212.25deg 50.63% 30.98%);
       }
       img {
-        display: flex;
+        display: grid;
+        grid-template-columns: 1fr;
         border-radius: 50%;
         height: 50px;
         width: 50px;
+      }
+
+      @media (min-width: 760px) {
+        body {
+          min-height: 100vh;
+          margin: 0%;
+          padding: 20px;
+        }
+        section {
+          display: flex;
+          justify-content: center;
+          font-family: sans-serif;
+          gap: 20px;
+          padding-top: 15rem;
+        }
+
+        .pic {
+          display: flex;
+          padding: 20px;
+          background-color: hsl(39.13deg 45.1% 90%);
+          border: 2px solid hsl(210.31deg 50.26% 62.16%);
+          border-radius: 50px;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+            rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+            rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        }
+        h3 {
+          font-weight: 700;
+          color: hsl(212.25deg 50.63% 30.98%);
+        }
+        img {
+          display: flex;
+          border-radius: 50%;
+          height: 50px;
+          width: 50px;
+        }
       }
     </style>
   </head>
