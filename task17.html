@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 3rem;
+        display: grid;
+        place-content: center;
+        gap: 20px;
+        background-color: orange;
+        font-family: sans-serif;
+        min-height: 100vh;
+        overflow: auto;
+      }
+      .flag-container {
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+        gap: 20px;
+        width: 300px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+          rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+      }
+      .flag-container > img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50px;
+        margin-top: 10px;
+      }
+      .content {
+        align-items: center;
+        line-height: 30px;
+      }
+      .content p {
+        color: hsla(0, 0%, 0%, 0.498);
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      // fetch("https://64f6f44c9d7754084952d964.mockapi.io/users", {
+      //   method: "GET",
+      // }).then((res) =>
+      //   res.json().then((data) => {
+      //     data.forEach(({ avatar, name, createdAt }) => {
+      //       document.body.innerHTML += `<section class="flag-container">
+      //     <img
+      //     src=${avatar}
+      //     alt=${name}/>
+      //     <div class="content">
+      //       <h3>${name}</h3>
+      //       <p> <strong>${new Date(createdAt).toDateString()}</strong></p>
+      //       <button onclick="deleteUser()">Delete</button>
+      //       </div>
+      //    </section>`;
+      //     });
+      //   })
+      // );
+
+      fetch("https://64f6f44c9d7754084952d964.mockapi.io/users", {
+        method: "GET",
+      }).then((res) =>
+        res.json().then((data) => {
+          data.forEach(({ avatar, name, createdAt }) => {
+            document.body.innerHTML += `<section class="flag-container">
+          <img
+          src=${avatar}
+          alt=${name}/>
+          <div class="content">
+            <h3>${name}</h3>
+            <p> <strong>${new Date(createdAt).toDateString()}</strong></p>
+            <button onclick="deleteUser()">Delete</button>
+            </div>
+         </section>`;
+          });
+        })
+      );
+    </script>
+  </body>
+</html>

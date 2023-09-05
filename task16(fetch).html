@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-content: center;
+        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+
+        padding: 2rem;
+        font-family: Roboto, "san-serif";
+        background: whitesmoke;
+      }
+
+      .flag-container {
+        background: white;
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+          rgba(0, 0, 0, 0.23) 0px 6px 6px;
+      }
+
+      .flag-details {
+        padding: 1.5rem;
+      }
+
+      .flag-details p {
+        font-size: 1.1rem;
+      }
+
+      .flag-container img {
+        height: 12rem;
+        width: 100%;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      // 1. Task 1 print names
+      fetch("https://restcountries.com/v3.1/all")
+        .then((response) => response.json())
+        .then((msg) => console.log(msg));
+      // .then((msg) => {
+      //   console.log(msg.map((nm) => nm.name.common));
+      // });
+
+      //2. Task 2 population more than 1_00_00_000
+      // fetch("https://restcountries.com/v3.1/all")
+      //   .then((response) => response.json())
+      //   // .then((msg) => console.log(msg))
+      //   .then((msg) => {
+      //     console.log(
+      //       msg
+      //         .filter((cname) => cname.population > 10000000)
+      //         .sort((a, b) => b.population - a.population)
+      //         .map((name) => name.name.common)
+      //     );
+      //   });
+
+      //3.Task 3 population more than 1_00_00_000
+      //output
+      //1.India - 1500000000
+      // fetch("https://restcountries.com/v3.1/all")
+      //   .then((response) => response.json())
+      //   .then((data) => {
+      //     console.log(
+      //       data
+      //         .filter((cname) => cname.population > 10000000)
+      //         .sort((a, b) => b.population - a.population)
+      //         .map((n, c) => `${c + 1}. ${n.name.common} - ${n.population}`)
+      //         .join("\n")
+      //     );
+      //   });
+
+      //4.Task 4  Get Top 10 Populated countries
+      // fetch("https://restcountries.com/v3.1/all")
+      //   .then((response) => response.json())
+      //   .then((data) => {
+      //     console.log(
+      //       data
+      //         .filter((cname) => cname.population > 10000000)
+      //         .sort((a, b) => b.population - a.population)
+      //         .map((n, c) => `${c + 1}. ${n.name.common} - ${n.population}`)
+      //         .join("\n")
+      //         .slice(0, 10)
+      //     );
+      //   });
+
+      //5 Task 5 Display top 10 countries in list form
+      // fetch("https://restcountries.com/v3.1/all")
+      //   .then((response) => response.json())
+      //   .then((data) => {
+      //     console.log(
+      //       data
+      //         .filter((cname) => cname.population > 10000000)
+      //         .sort((a, b) => b.population - a.population)
+      //         // .map((n, c) => `${c + 1}. ${n.name.common} - ${n.population}`)
+      //         // .join("\n")
+      //         .slice(0, 10)
+      //         .map(
+      //           (n) =>
+      //             (document.querySelector(
+      //               "ul"
+      //             ).innerHTML += `<li>${n.name.common}</li>`)
+      //         )
+      //     );
+      //   });
+
+      //task 6
+      const countriesInfo = fetch("https://restcountries.com/v3.1/all")
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data.sort((a, b) => b.population - a.population));
+          data.forEach(({ flags, name, population, region, capital }) => {
+            document.body.innerHTML += `<section class="flag-container">
+          <img
+          src=${flags.svg}
+          alt=${name}/>
+          <div class="flag-details">
+            <h2 class="country-name">${name.common}</h2>
+
+            <p><strong>Population:</strong> ${population}</p>
+           <p><strong>Region:</strong> ${region}</p>
+          <p><strong>Capital:</strong> ${capital}</p>
+         </div>
+
+         </section>`;
+          });
+        });
+    </script>
+  </body>
+</html>

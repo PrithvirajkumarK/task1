@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      background-color: hsl(201, 100%, 50%);
+      margin: 0;
+      place-content: center;
+      min-height: 100vh;
+      display: grid;
+    }
+
+    .counter {
+      border: 1px solid black;
+      padding: 0.8rem;
+      background-color: aliceblue;
+      border-radius: 15px;
+      color: blue;
+    }
+  </style>
+  <body>
+    <h1 class="counter">10</h1>
+    <script>
+      function happynewyear() {
+        return new Promise((resolve) => {
+          let count = 10;
+
+          function timer() {
+            if (count > 0) {
+              document.querySelector(".counter").innerText = --count;
+              setTimeout(timer, 1000);
+            } else {
+              document.querySelector(".counter").innerText =
+                "Happy New Year🎉🎉";
+              setTimeout(timer, 1000);
+            }
+          }
+          timer();
+        });
+      }
+
+      const x = happynewyear();
+      x.then(() => console.log("count down completed"));
+
+      x.catch((error) => console.error("An error oocured", error));
+    </script>
+  </body>
+</html>

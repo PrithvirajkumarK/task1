@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Create a Promise
+
+      //   Eg. 1
+      //   const drivingTest = new Promise((resolve, reject) => {
+      //     let age = 18;
+      //     if (age >= 18) {
+      //       resolve("Eligible for driving test ✅");
+      //     } else {
+      //       reject("Try again after few years 👶🍼");
+      //     }
+      //   });
+
+      //   console.log(typeof drivingTest);
+      //   console.log(drivingTest); // Fulfilled
+
+      //   Eg. 2
+      //     const drivingTest = new Promise((resolve, reject) => {
+      //     let age = 14;
+      //     if (age >= 18) {
+      //       resolve("Eligible for driving test ✅");
+      //     } else {
+      //       reject("Try again after few years 👶🍼");
+      //     }
+      //   });
+
+      //   console.log(typeof drivingTest);
+      //   console.log(drivingTest); // rejected
+
+      //   Eg. 3
+      //   const drivingTest = new Promise((resolve, reject) => {
+      //     let age = 21;
+      //     if (age >= 18) {
+      //       setTimeout(() => {
+      //         resolve("Eligible for driving test ✅");
+      //       }, 5000);
+      //     } else {
+      //       reject("Try again after few years 👶🍼");
+      //     }
+      //   });
+
+      //   console.log(typeof drivingTest);
+      //   console.log(drivingTest); // Pending
+
+      //   Eg. 4 - .then
+      //   const drivingTest = new Promise((resolve, reject) => {
+      //     let age = 21;
+      //     if (age >= 18) {
+      //       setTimeout(() => {
+      //         resolve("Eligible for driving test ✅");
+      //       }, 5000);
+      //     } else {
+      //       reject("Try again after few years 👶🍼");
+      //     }
+      //   });
+
+      //   const x = drivingTest // Promise object
+      //     .then((msg) => console.log("Awesome " + msg)) // Promise object
+
+      //   console.log(typeof x);
+
+      //   Eg. 5 - .then - dot chaining
+      //   const drivingTest = new Promise((resolve, reject) => {
+      //     let age = 21;
+      //     if (age >= 18) {
+      //       setTimeout(() => {
+      //         resolve("Eligible for driving test ✅");
+      //       }, 5000);
+      //     } else {
+      //       reject("Try again after few years 👶🍼");
+      //     }
+      //   });
+
+      //   //  Promise using
+      //   drivingTest // Promise object
+      //     .then((msg) => "Awesome " + msg) // Promise object
+      //     .then((fun) => fun + " Super ✅")
+      //     .then((msg) => console.log(msg + " Lets Go !!!"));
+
+      //   Eg. 6 - Handle Error
+      //   const drivingTest = new Promise((resolve, reject) => {
+      //     let age = 14;
+      //     if (age >= 18) {
+      //       setTimeout(() => {
+      //         resolve("Eligible for driving test ✅");
+      //       }, 5000);
+      //     } else {
+      //       reject("Try again after few years 👶🍼");
+      //     }
+      //   });
+
+      //   //  Promise using
+      //   drivingTest // Promise object
+      //     .then((msg) => "Awesome " + msg) // Promise object // skip
+      //     .then((fun) => fun + " Super ✅") // skip
+      //     .then((msg) => console.log(msg + " Lets Go !!!")) // skip
+      //     .catch((err) => console.log("Error ❌: " + err))
+
+      //   Eg. 7 - Handle Error
+      const drivingTest = new Promise((resolve, reject) => {
+        let age = 14;
+        if (age >= 18) {
+          setTimeout(() => {
+            resolve("Eligible for driving test ✅");
+          }, 5000);
+        } else {
+          reject("Try again after few years 👶🍼");
+        }
+      });
+
+      //  Promise using
+      drivingTest // Promise object
+        .then((msg) => "Awesome " + msg) // Promise object // skip
+        .then((fun) => fun + " Super ✅") // skip
+        .then((msg) => console.log(msg + " Lets Go !!!")) // skip
+        .catch((err) => "Error ❌: " + err)
+        .then((m1) => console.log("Crossed and Handled " + m1));
+    </script>
+  </body>
+</html>
