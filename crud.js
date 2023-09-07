@@ -16,7 +16,7 @@ function addUser() {
   // 3. Header - JSON data
 
   // Create -> Refresh
-  fetch("https://60c98aa8772a760017203b57.mockapi.io/users", {
+  fetch("https://64f6f44c9d7754084952d964.mockapi.io/users", {
     method: "POST",
     body: JSON.stringify(data),
     headers: {
@@ -49,13 +49,13 @@ function deleteUser(id) {
 
   // Avoided Race condition
   // Delete -> Refresh
-  fetch(`https://60c98aa8772a760017203b57.mockapi.io/users/${id}`, {
+  fetch(`https://64f6f44c9d7754084952d964.mockapi.io/users/${id}`, {
     method: "DELETE",
   }).then(() => getUsers());
 
   // Race Condition
   // Lorry
-  // fetch(`https://60c98aa8772a760017203b57.mockapi.io/users/${id}`, {
+  // fetch(`https://64f6f44c9d7754084952d964.mockapi.io/users/${id}`, {
   //   method: "DELETE",
   // })
 
@@ -64,7 +64,7 @@ function deleteUser(id) {
 }
 let pageNo=1;
 function getUsers() {
-  fetch(`https://60c98aa8772a760017203b57.mockapi.io/users?page=${pageNo}&limit=10`, {
+  fetch(`https://64f6f44c9d7754084952d964.mockapi.io/users?page=${pageNo}&limit=10`, {
     method: "GET",
   })
     .then((res) => res.json())
@@ -77,6 +77,9 @@ function getUsers() {
 }
 
 function nextPage(){
+    if(pageNo == singlePageLength){
+        return 
+    }
     pageNo++;
     getUsers()
 }
@@ -93,7 +96,7 @@ function btn(pageNum){
 }
 let singlePageLength;
 async function getTotalUserCount(){
-const totalData=await  fetch("https://60c98aa8772a760017203b57.mockapi.io/users")
+const totalData=await  fetch("https://64f6f44c9d7754084952d964.mockapi.io/users")
 const len = await totalData.json()
 
 const totalLength = len.length
