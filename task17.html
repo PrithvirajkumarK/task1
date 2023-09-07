@@ -16,6 +16,11 @@
         min-height: 100vh;
         overflow: auto;
       }
+      .User-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
       .flag-container {
         display: flex;
         justify-content: center;
@@ -43,6 +48,11 @@
     </style>
   </head>
   <body>
+    <h1>Welcome to Nihilent</h1>
+    <input type="text" class="user-name" placeholder="Name" />
+    <input type="text" class="user-avatar" placeholder="AvatarURL" />
+    <button onclick="adduser()">Add User</button>
+    <section class="User-container"></section>
     <script>
       // fetch("https://64f6f44c9d7754084952d964.mockapi.io/users", {
       //   method: "GET",
@@ -63,24 +73,62 @@
       //   })
       // );
 
-      fetch("https://64f6f44c9d7754084952d964.mockapi.io/users", {
-        method: "GET",
-      }).then((res) =>
-        res.json().then((data) => {
-          data.forEach(({ avatar, name, createdAt }) => {
-            document.body.innerHTML += `<section class="flag-container">
+      // fetch("https://64f6f44c9d7754084952d964.mockapi.io/users", {
+      //   method: "GET",
+      // }).then((res) =>
+      //   res.json().then((data) => {
+      //     data.forEach(({ avatar, name, createdAt }) => {
+      //       document.body.innerHTML += `<section class="flag-container">
+      //     <img
+      //     src=${avatar}
+      //     alt=${name}/>
+      //     <div class="content">
+      //       <h3>${name}</h3>
+      //       <p> <strong>${new Date(createdAt).toDateString()}</strong></p>
+      //       <button onclick="deleteUser()">Delete</button>
+      //       </div>
+      //    </section>`;
+      //     });
+      //   })
+      // );
+      const getuser = document.querySelector(".User-container");
+      const details = ({ avatar, name, createdAt, id }) => {
+        getuser.innerHTML += `<div class="flag-container">
           <img
-          src=${avatar}
+          src=${avatar} 
           alt=${name}/>
           <div class="content">
             <h3>${name}</h3>
             <p> <strong>${new Date(createdAt).toDateString()}</strong></p>
-            <button onclick="deleteUser()">Delete</button>
+            <button onclick="deleteUser(${id})">Delete</button>
             </div>
-         </section>`;
-          });
+         </div>`;
+      };
+
+      function adduser() {
+        console.log("Added");
+        const name1 = document.querySelector(".user-name").value;
+        const avatar1 = document.querySelector(".user-avatar").value;
+      }
+      function deleteUser(id) {
+        fetch(`https://64f6f44c9d7754084952d964.mockapi.io/users/${id}`, {
+          method: "DELETE",
+        }).then(() => userlist());
+        console.log("Deleted");
+      }
+
+      function userlist() {
+        fetch("https://64f6f44c9d7754084952d964.mockapi.io/users", {
+          method: "GET",
         })
-      );
+          .then((res) => res.json())
+          .then((user) => {
+            getuser.innerHTML = "";
+            user.forEach(details);
+          });
+      }
+
+      userlist();
     </script>
   </body>
 </html>

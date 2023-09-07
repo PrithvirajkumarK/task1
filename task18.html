@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+
+  <body>
+    <section class="userFeed"></section>
+    <script>
+      async function getUser() {
+        const userData = await fetch(
+          "https://jsonplaceholder.typicode.com/users",
+          { method: "GET" }
+        );
+
+        const fetchUserData = await userData.json();
+        const top3Users = fetchUserData.slice(0, 3);
+        console.log(top3Users);
+        const top3UsersId = top3Users.forEach((user) => getUserPosts(user));
+      }
+
+      async function getUserPosts({ id: userId, name }) {
+        const postData = await fetch(
+          `https://jsonplaceholder.typicode.com/posts?userId=${userId}`,
+
+          { method: "GET" }
+        );
+
+        const fetchPostData = await postData.json();
+        const top3Posts = fetchPostData.slice(0, 3);
+        console.log(top3Posts);
+
+        const finalData = top3Posts.forEach((postDatas) => {
+          const topPostData = {
+            title: postDatas.title,
+            body: postDatas.body,
+            name,
+          };
+          displayUsersPosts(topPostData);
+        });
+      }
+
+      function displayUsersPosts({ name, title, body }) {
+        const displayUsers = document.querySelector(".userFeed");
+        displayUsers.innerHTML += `<div class="authorsContainer">
+          <h3 class="authorName">${name}</h3>
+          <h5 class="postTitle">${title}</h5>
+          <p class="postComment">${body}</p>
+
+        </div>`;
+      }
+
+      getUser();
+    </script>
+  </body>
+</html>
